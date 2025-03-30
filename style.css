@@ -198,3 +198,217 @@ tr:hover {
     }
 }
 
+/* Base Styles */
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f0f2f5;
+}
+
+/* Header Container */
+.header-container {
+    text-align: center;
+    padding: 2rem 1rem;
+    background: linear-gradient(135deg, #1a1a2e, #16213e);
+    color: white;
+    border-bottom: 3px solid #4cc9f0;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Main Header */
+.main-header {
+    font-size: clamp(2rem, 5vw, 3rem);
+    font-weight: 800;
+    margin: 0;
+    letter-spacing: 3px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    line-height: 1.2;
+}
+
+/* Sub Header */
+.sub-header {
+    font-size: clamp(1.2rem, 3vw, 1.8rem);
+    margin: 0.5rem 0 1.5rem;
+    color: #4cc9f0;
+    font-weight: 600;
+}
+
+/* Profile Section */
+.profile-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    margin: 1.5rem auto;
+    flex-wrap: wrap;
+    max-width: 800px;
+}
+
+.profile-image {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border: 3px solid white;
+    object-fit: cover;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.profile-image:hover {
+    transform: scale(1.05);
+}
+
+.crypto-address {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 0.75rem 1.5rem;
+    border-radius: 2rem;
+    font-family: 'Courier New', monospace;
+    font-size: 1.1rem;
+    word-break: break-all;
+    backdrop-filter: blur(5px);
+}
+
+/* PumpFun Link */
+.pumpfun-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: #ff6b35;
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: 2rem;
+    text-decoration: none;
+    font-weight: 600;
+    margin-top: 1rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.pumpfun-link:hover {
+    background: #ff8c5a;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 600px) {
+    .profile-section {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .crypto-address {
+        padding: 0.5rem 1rem;
+        font-size: 0.9rem;
+    }
+}
+
+/* Base Styles */
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f0f2f5;
+}
+
+/* Header Container - CHANGED TO WHITE */
+.header-container {
+    text-align: center;
+    padding: 2rem 1rem;
+    background: white; /* Changed from gradient to white */
+    color: #333; /* Changed text color for better contrast */
+    border-bottom: 1px solid #e0e0e0; /* Subtle border */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+/* Main Header - DARKER TEXT FOR WHITE BG */
+.main-header {
+    font-size: clamp(2rem, 5vw, 3rem);
+    font-weight: 800;
+    margin: 0;
+    letter-spacing: 3px;
+    color: #222; /* Darker text */
+    line-height: 1.2;
+}
+
+/* Sub Header - DIFFERENT COLOR FOR WHITE BG */
+.sub-header {
+    font-size: clamp(1.2rem, 3vw, 1.8rem);
+    margin: 0.5rem 0 1.5rem;
+    color: #ff6b35; /* Changed to orange to stand out */
+    font-weight: 600;
+}
+
+/* Profile Section - UPDATED FOR SQUARE IMAGE */
+.profile-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    margin: 2rem auto; /* Increased margin */
+    flex-wrap: wrap;
+    max-width: 800px;
+}
+
+/* CHANGED TO SQUARE AND LARGER */
+.profile-image {
+    width: 200px; /* Much larger */
+    height: 200px; /* Square dimensions */
+    border-radius: 8px; /* Slightly rounded corners */
+    border: 1px solid #e0e0e0;
+    object-fit: cover;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.profile-image:hover {
+    transform: scale(1.02);
+}
+
+.crypto-address {
+    background: #f8f9fa;
+    padding: 0.75rem 1.5rem;
+    border-radius: 2rem;
+    font-family: 'Courier New', monospace;
+    font-size: 1.1rem;
+    word-break: break-all;
+    color: #333;
+    border: 1px solid #e0e0e0;
+}
+
+/* PumpFun Link - UPDATED FOR WHITE BG */
+.pumpfun-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: #ff6b35;
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: 2rem;
+    text-decoration: none;
+    font-weight: 600;
+    margin-top: 1.5rem;
+    transition: all 0.3s ease;
+}
+
+.pumpfun-link:hover {
+    background: #ff8c5a;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 600px) {
+    .profile-section {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
+    .profile-image {
+        width: 150px;
+        height: 150px;
+    }
+
+    .crypto-address {
+        font-size: 0.9rem;
+    }
+}

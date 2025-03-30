@@ -144,3 +144,47 @@ function exportToExcel() {
     const workbook = XLSX.utils.table_to_book(table);
     XLSX.writeFile(workbook, 'exported_data.xlsx');
 }
+
+// DOM Elements
+const profileImage = document.getElementById('profileImage');
+const cryptoAddress = document.getElementById('cryptoAddress');
+
+// Configuration - Update these with your actual data
+const config = {
+    profileImageUrl: '225.jpg',
+    cryptoWalletAddress: 'CFNHfeDRDRJMSrQgTSxah7hq2vMqrZ7BZJrPdcyspump',
+    pumpFunUrl: 'https://pump.fun/coin/CFNHfeDRDRJMSrQgTSxah7hq2vMqrZ7BZJrPdcyspump?include-nsfw=true'
+};
+
+// Initialize the header with dynamic content
+function initHeader() {
+    try {
+        // Set profile image
+        profileImage.src = config.profileImageUrl;
+
+        // Set crypto address
+        cryptoAddress.textContent = config.cryptoWalletAddress;
+
+        // Add click-to-copy functionality for crypto address
+        cryptoAddress.addEventListener('click', () => {
+            navigator.clipboard.writeText(config.cryptoWalletAddress)
+                .then(() => {
+                    const originalText = cryptoAddress.textContent;
+                    cryptoAddress.textContent = 'Copied!';
+                    setTimeout(() => {
+                        cryptoAddress.textContent = originalText;
+                    }, 2000);
+                })
+                .catch(err => {
+                    console.error('Failed to copy address: ', err);
+                });
+        });
+
+        console.log('Header initialized successfully');
+    } catch (error) {
+        console.error('Error initializing header:', error);
+    }
+}
+
+// Initialize when DOM is fully loaded
+document.addEventListener('DOMContentLoaded', initHeader);
