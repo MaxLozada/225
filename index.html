@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+<div class="dashboard-container">
+    <header class="dashboard-header">
+        <h1><i class="fas fa-table"></i> Data Dashboard</h1>
+        <div class="actions">
+            <button id="exportBtn" title="Export to Excel">
+                <i class="fas fa-file-export"></i> Export
+            </button>
+            <button id="toggleAllBtn" title="Toggle All Columns">
+                <i class="fas fa-eye-slash"></i> Toggle All
+            </button>
+        </div>
+    </header>
+
+    <div class="controls">
+        <div class="search-box">
+            <i class="fas fa-search"></i>
+            <input type="text" id="searchInput" placeholder="Search...">
+        </div>
+        <div class="column-toggle" id="columnControls">
+            <!-- Column toggles will appear here -->
+        </div>
+    </div>
+
+    <div class="table-container">
+        <div id="tableWrapper">
+            <!-- Excel data will be loaded here -->
+        </div>
+    </div>
+
+    <div class="status-bar">
+        <span id="rowCount">0 rows loaded</span>
+        <span id="columnCount">0 columns</span>
+    </div>
+</div>
+
+<!-- Include SheetJS library -->
+<script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
+<!-- Include our custom script -->
+<script src="script.js"></script>
+</body>
+</html>
