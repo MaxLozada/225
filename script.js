@@ -188,3 +188,31 @@ function initHeader() {
 
 // Initialize when DOM is fully loaded
 document.addEventListener('DOMContentLoaded', initHeader);
+
+function processExcelFile(data) {
+    const workbook = XLSX.read(new Uint8Array(data), { type: 'array' });
+    const firstSheet = workbook.Sheets[workbook.SheetNames[0]];
+
+    // Convert to JSON first to filter out empty rows
+    const jsonData = XLSX.utils.sheet_to_json(firstSheet, { defval: null });
+
+    // Filter out empty rows
+    const filteredData = jsonData.filter(row => {
+        return Object.values(row).some(cell => cell !== null && cell !== '');
+    });
+
+    // Convert filtered data back to HTML
+    const newWorksheet = XLSX.utils.json_to_sheet(filteredData);
+    const html = XLSX.utils.sheet_to_html(newWorksheet);
+
+    // Display the table
+    const tableWrapper = document.getElementById('tableWrapper');
+    tableWrapper.innerHTML = html;
+
+    const table = tableWrapper.querySelector('table');
+    if (table) {
+        table.classList.add('data-table');
+        updateStatusBar(table);
+        setupColumnToggles(table);
+    }
+}
